@@ -11,3 +11,20 @@ randomer_number = random.choice(random_list)
 # Print randomer_number below:
 print(randomer_number)
 #----------------------------------------------------------
+import codecademylib3_seaborn
+
+# Add your code below:
+from matplotlib import pyplot as plt
+import random
+numbers_a = range(1, 13)
+numbers_b = [random.randint(1, 1000) for i in range(12)]
+plt.plot(numbers_a, numbers_b)
+plt.show()
+#----------------------------------------------------------
+# 主要是学会如何用一句话组一个随机数的集合 Line 20
+
+user_ids = {"teraCoder": 9018293, "proProgrammer": 119238}
+user_ids.update({'theLooper': 138475, 'stringQueen': 85739})
+
+print(user_ids)
+# 如何用一句话给字典同时加很多量
