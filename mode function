@@ -43,3 +43,58 @@ zipped_drinks = zip(drinks, caffeine)
 
 drinks_to_caffeine = {key:value for key, value in zipped_drinks}
 # How to pair two list into one dictionary
+#--------------------------------------------------------------
+key_to_check = "Landmark 81"
+try:
+  print(building_heights[key_to_check])
+except KeyError:
+  print("That key doesn't exist!")
+#检查一个key 是否在一个词典里的方法
+
+------------------------------------------------------------------
+
+available_items = {"health potion": 10, "cake of the cure": 5, "green elixir": 20, "strength sandwich": 25, "stamina grains": 15, "power stew": 30}
+health_points = 20
+health_points += available_items.pop('stamina grains', 0)
+health_points += available_items.pop('power stew', 0)
+health_points += available_items.pop('mystic bread', 0)
+
+print(available_items)
+print(health_points)
+#返回一个字典里的值， 并把对应的key 和值都删掉
+-------------------------------------------------------------------
+tarot = { 1:	"The Magician", 2:	"The High Priestess", 3:	"The Empress", 4:	"The Emperor", 5:	"The Hierophant", 6:	"The Lovers", 7:	"The Chariot", 8:	"Strength", 9:	"The Hermit", 10:	"Wheel of Fortune", 11:	"Justice", 12:	"The Hanged Man", 13:	"Death", 14:	"Temperance", 15:	"The Devil", 16:	"The Tower", 17:	"The Star", 18:	"The Moon", 19:	"The Sun", 20:	"Judgement", 21:	"The World", 22: "The Fool"}
+
+spread = {}
+
+spread['past'] = tarot.pop(13)
+spread['present'] = tarot.pop(22)
+spread['future'] = tarot.pop(10)
+for tense, value in spread.items():
+  print('Your ' + tense + ' is the ' + value + ' card.')
+#小练习， for the dictionary command
+#---------------------------------------------------------
+letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+points = [1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 4, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10]
+
+letter_to_points = {key : value for key, value in zip(letters, points)}
+letter_to_points[' '] = 0
+def score_word(word):
+  point_total = 0
+  for letter in word:
+    point_total += letter_to_points.get(letter, 0)
+  return point_total
+brownie_points = score_word('BROWNIE')
+
+player_to_words = {'player1': ['BLUE', 'TENNIS', 'EXIT'], 'wordNerd': ['EARTH', 'EYES', 'MACHINE'], 'Lexi Con': ['ERASER', 'BELLY', 'HUSKY'], 'Prof Reader': ['ZAP', 'COMA', 'PERIOD']}
+
+player_to_points = {}
+for player, words in player_to_words.items():
+  player_points = 0
+  for word in words:
+    player_points += score_word(word) 
+  player_to_points[player] = player_points
+  
+print(player_to_points)
+#----------------------------------------------------------------
+#dictionary practice
