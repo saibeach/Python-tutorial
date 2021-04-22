@@ -1,1 +1,151 @@
 # In Python __main__ means “this current file that we’re running” and so one could read the output from type() to mean “the class CoolClass that was defined here, in the script you’re currently running.”
+#------------------------------------------------------------------------
+  def time_explanation(self):
+    print("Dogs experience {} years for every 1 human year.".format(self.dog_time_dilation))
+ 
+pipi_pitbull = Dog()
+pipi_pitbull.time_explanation()
+# Prints "Dogs experience 7 years for every 1 human year."
+
+#--------------------------------------------------------------------
+class DistanceConverter:
+  kms_in_a_mile = 1.609
+  def how_many_kms(self, miles):
+    return miles * self.kms_in_a_mile
+ 
+converter = DistanceConverter()
+kms_in_5_miles = converter.how_many_kms(5)
+print(kms_in_5_miles)
+# prints "8.045"
+#methods with arguments
+#-------------------------------------------------------------------
+
+"dunder" = double underscore
+#_------------------------------------------------------------------
+__init__
+This method is used to initialize a newly created object. It is called every time the class is instantiated.
+class Shouter:
+  def __init__(self, phrase):
+    # make sure phrase is a string
+    if type(phrase) == str:
+ 
+      # then shout it out
+      print(phrase.upper())
+ 
+shout1 = Shouter("shout")
+# prints "SHOUT"
+ 
+shout2 = Shouter("shout")
+# prints "SHOUT"
+ 
+shout3 = Shouter("let it all out")
+# prints "LET IT ALL OUT"
+#example for init method
+#----------------------------------------------------------------------
+can_we_count_it = [{'s': False}, "sassafrass", 18, ["a", "c", "s", "d", "s"]]
+for item in can_we_count_it:
+  if hasattr(item, "count"):
+    print(str(type(item)) + " has the count attribute!")
+  else:
+    print(str(type(item)) + " has't the count attribute!")
+    
+ #检查类举出的实例，具不具有某个属性的方法
+ #---------------------------------------------------------------------
+class Circle:
+  pi = 3.14
+  def __init__(self, diameter):
+    print("Creating circle with diameter {d}".format(d=diameter))
+    # Add assignment for self.radius here:
+    
+    self.radius = diameter / 2
+    
+  def circumference(self):
+    return 2 * self.pi * self.radius
+  
+medium_pizza = Circle(12)
+teaching_table = Circle(36)
+round_room = Circle(11460)
+
+print(medium_pizza.circumference())
+print(teaching_table.circumference())
+print(round_room.circumference())
+
+#前边定变量的时候已经输参了， 后边用method的时候就不用再传参了
+#This is a method we can use to tell Python what we want the string representation of the class to be. __repr__() can only have one parameter, self, and must return a string.
+class Student:
+  def __init__(self, name, year):
+    self.name = name
+    self.year = year
+    self.grades = []
+  def add_grade(self, grade):
+    if type(grade) is Grade:
+      self.grades.append(grade)
+   
+roger = Student("Roger van der Weyden", 10)
+sandro = Student("Sandro Botticelli", 12)
+pieter = Student("Pieter Bruegel the Elder", 8)
+class Grade:
+  minimum_passing = 65
+  def __init__(self, score):
+    self.score = score
+pieter.add_grade(Grade(100))
+#--------------Inheritance-----------------------------------
+class User:
+  is_admin = False
+  def __init__(self, username)
+    self.username = username
+ 
+class Admin(User):
+  is_admin = True
+
+Above we defined User as our base class. We want to create a new class that inherits from it, so we created the subclass Admin. 
+In the above example, Admin has the same constructor as User. Only the class variable is_admin is set differently between the two.
+
+Sometimes a base class is called a parent class. In these terms, the class inheriting from it, the subclass, is also referred to as a child class.
+
+#----------------------------------------------------------------
+invoke 调用
+
+class Atom:
+  def __init__(self, label):
+    self.label = label
+    
+  def __add__(self, other):
+    return Molecule([self, other])
+    
+class Molecule:
+  def __init__(self, atoms):
+    if type(atoms) is list:
+	    self.atoms = atoms
+      
+sodium = Atom("Na")
+chlorine = Atom("Cl")
+salt = Molecule([sodium, chlorine])
+# salt = sodium + chlorine
+
+#--------------------------------------------------------------------
+#用class制造加法语言
+class UserGroup:
+  def __init__(self, users, permissions):
+    self.user_list = users
+    self.permissions = permissions
+ 
+  def __iter__(self):
+    return iter(self.user_list)
+ 
+  def __len__(self):
+    return len(self.user_list)
+ 
+  def __contains__(self, user):
+    return user in self.user_list
+其他方法
+#--------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
