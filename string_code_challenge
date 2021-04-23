@@ -1,0 +1,115 @@
+letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+# Write your unique_english_letters function here:
+def unique_english_letters(word):
+  uniques = 0
+  for letter in letters:
+    if letter in word:
+      uniques += 1
+  return uniques
+
+# Uncomment these function calls to test your function:
+print(unique_english_letters("mississippi"))
+#------------------------------------------------------------------
+# Write your count_char_x function here:
+def count_char_x(word, x):
+  counter = 0
+  for alph in word:
+    if alph == x:
+      counter += 1
+  return counter
+# Uncomment these function calls to test your tip function:
+print(count_char_x("mississippi", "s"))
+# should print 4
+print(count_char_x("mississippi", "m"))
+# should print 1
+
+#-------------------------------------------------------------------
+# Write your count_multi_char_x function here:
+def count_multi_char_x(word, x):
+  wordsplited = word.split(x)
+  print(wordsplited)
+  return (len(wordsplited)-1)
+
+# Uncomment these function calls to test your function:
+print(count_multi_char_x("mississippi", "iss"))
+# should print 2
+print(count_multi_char_x("apple", "pp"))
+# should print 1
+
+#-------------------------------------------------------------------
+# Write your check_for_name function here:
+def check_for_name(sentence, name): 
+  if name.lower() in sentence.lower() :
+    return True
+  else:
+    return False
+# Uncomment these function calls to test your  function:
+print(check_for_name("My name is Jamie", "Jamie"))
+# should print True
+print(check_for_name("My name is jamie", "Jamie"))
+# should print True
+print(check_for_name("My name is Samantha", "Jamie"))
+# should print False
+#--------------------------------------------------------------------
+
+# Write your every_other_letter function here:
+def every_other_letter(word):
+  every_other = ""
+  for i in range(0, len(word)-1, 2):
+    every_other += word[i]
+  return every_other
+ 
+ 
+
+# Uncomment these function calls to test your function:
+print(every_other_letter("Codecademy"))
+# should print Cdcdm
+print(every_other_letter("Hello world!"))
+# should print Hlowrd
+print(every_other_letter(""))
+# should print 
+str 可以做加法，别忘了
+#-------------------------------------------------------------------
+# Write your reverse_string function here:
+def reverse_string(word):
+  reverse = ""
+  for i in range(0, len(word)):
+    reverse += word[-i-1]
+  return reverse
+
+# Uncomment these function calls to test your  function:
+print(reverse_string("Codecademy"))
+# should print ymedacedoC
+print(reverse_string("Hello world!"))
+# should print !dlrow olleH
+print(reverse_string(""))
+# should print
+#-----------------------------------------------------------------------
+def make_spoonerism(word1, word2):
+  return word2[0]+word1[1:]+" "+word1[0]+word2[1:]
+ 
+#----------------------------------------------------------------------
+#what i can say, WTF!   cleanner!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
