@@ -1,0 +1,10 @@
+class DriveBot(Robot):
+    def __init__(self, motor_speed = 0, direction = 180, sensor_range = 10):
+        super().__init__(motor_speed, direction, sensor_range)
+ 
+class WalkBot(Robot):
+    def __init__(self, steps_per_minute = 0, direction = 180, sensor_range = 10, step_length = 5):
+        super().__init__(steps_per_minute, direction, sensor_range)
+        self.step_length = step_length
+#--------------------how to inheritance the super constructor-------------------------------
+
